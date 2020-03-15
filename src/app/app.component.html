@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="card col border-light">
+    <div class="card-header border-light">
+      <h2>{{ title }}</h2>
+    </div>
+    <div class=" card-body row ">
+      <div class="card col border-light" style="width: 50%;">
+        <h2>canvas</h2>
+        <app-drawspace ></app-drawspace>
+      </div>
+      <div class="card col border-light" style="width: 50%;">
+        <h2>buttons</h2>
+        <app-pause-play-button (play)=onPlay($event)></app-pause-play-button>
+      </div>
+    </div>
+  </div>
+</div>
