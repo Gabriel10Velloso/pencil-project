@@ -1,5 +1,4 @@
 import { Component, OnInit, Input, Output } from '@angular/core';
-import { DrawspaceComponent } from '../drawspace/drawspace.component';
 import {EventEmitter} from '@angular/core';
 
 @Component({
@@ -9,15 +8,19 @@ import {EventEmitter} from '@angular/core';
 })
 export class PausePlayButtonComponent implements OnInit {
   isPlay = true;
+  isReset = true;
   @Output() play: EventEmitter<any> = new EventEmitter();
+  @Output() reset: EventEmitter<any> = new EventEmitter();
 
   constructor() { }
-
   ngOnInit(): void {
   }
   
   onClick(): void {
     this.isPlay = !this.isPlay
     this.play.emit(this.isPlay);
+  }
+  onReset(): void {
+    this.reset.emit();
   }
 }

@@ -5,13 +5,16 @@
     </div>
     <div class=" card-body row ">
       <div class="card col border-light" style="width: 50%;">
-        <h2>canvas</h2>
-        <app-drawspace ></app-drawspace>
+        <h2></h2>
+        <app-drawspace [isPlaying]=isPlaying [isReset]=isReset></app-drawspace>
       </div>
       <div class="card col border-light" style="width: 50%;">
-        <h2>buttons</h2>
-        <app-pause-play-button (play)=onPlay($event)></app-pause-play-button>
+        <h2></h2>
+        <app-pause-play-button (play)=onPlay($event) (reset)=onReset($event)></app-pause-play-button>
       </div>
+    </div>
+    <div class="card-footer text-muted">
+      <p>Made with ❤ in Maryland, USA</p>
     </div>
   </div>
 </div>

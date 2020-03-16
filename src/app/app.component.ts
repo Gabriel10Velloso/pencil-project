@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { DrawspaceComponent } from './drawspace/drawspace.component';
 
 @Component({
   selector: 'app-root',
@@ -7,8 +6,13 @@ import { DrawspaceComponent } from './drawspace/drawspace.component';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Interactive Ad Editor';
+  title = 'Interactive Ad Editor';  
+  isPlaying = null;
+  isReset = 0;
   onPlay(evt){
-    console.log("onPlayed: ", evt);
+    this.isPlaying = evt;
+  }
+  onReset(evt){
+    this.isReset += 1;
   }
 }
