@@ -7,7 +7,7 @@ Build a simple animations editor which can preview an animated ad creative:
 
 - Render a design with 3 objects on a fabric canvas in a simple frontend. We recommend playing around with this demo to get a feel for how fabric objects work.
 - Animate these 3 objects, one after the other, using the presets above. Controls to edit these presets need not be exposed to the user.
-    For example, if you have three squares on the canvas, the sequence of events would be: Square 1 fades in => Square 2 slides in => Square 3 wiggles
+    For example, if you have three squares on the canvas, the sequence of events would be: Square 1 fades in -> Square 2 slides in -> Square 3 wiggles
 - Add controls to allow the user to play, pause and restart the animation.
 
 ## Steps
@@ -26,6 +26,7 @@ Build a simple animations editor which can preview an animated ad creative:
 
 ## Potential Enhancements
 - Add functions to select custom objects or upload images
+- When task gets more complicated add test files back for testing purposes
 
 ## Frameworks used
 - Bootstrap 4
