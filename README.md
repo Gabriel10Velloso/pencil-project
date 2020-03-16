@@ -1,27 +1,34 @@
-# MyAppNew
+# Interactive Ad Editor
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.6.
 
-## Development server
+## The Task
+Build a simple animations editor which can preview an animated ad creative:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- Render a design with 3 objects on a fabric canvas in a simple frontend. We recommend playing around with this demo to get a feel for how fabric objects work.
+- Animate these 3 objects, one after the other, using the presets above. Controls to edit these presets need not be exposed to the user.
+    For example, if you have three squares on the canvas, the sequence of events would be: Square 1 fades in => Square 2 slides in => Square 3 wiggles
+- Add controls to allow the user to play, pause and restart the animation.
 
-## Code scaffolding
+## Steps
+1. git clone this repo
+2. go to folder
+3. ng serve and navigate to `http://localhost:4200/`
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## How it works
+- Press Play to start the animation (animation sequence: fade in, slide in, wiggle)
+- Press Pause to pause animation
+- Press Replay to restart the animation (it will automatically play on restart)
 
-## Build
+## Error Handling
+- Use Brave Browers/ Google Chrome or Safari (tested on these browsers)
+- Use it at full screen for best experience
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Potential Enhancements
+- Add functions to select custom objects or upload images
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Frameworks used
+- Bootstrap 4
+- fabric.js
+- anime.js
+- Angular 9
