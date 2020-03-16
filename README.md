@@ -25,6 +25,7 @@ Build a simple animations editor which can preview an animated ad creative:
 - Use it at full screen for best experience
 
 ## Error Handling
+- After resizing screen, refresh to have best experience
 
 ## Potential Enhancements
 - Add functions to select custom objects or upload images

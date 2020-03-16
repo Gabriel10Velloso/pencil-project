@@ -1,6 +1,7 @@
 import { Component, OnInit, OnChanges, Input, SimpleChanges } from "@angular/core";
 import {fabric} from 'fabric';
 import anime from 'animejs/lib/anime.es.js';
+import { wrap } from 'module';
 
 @Component({
   selector: "app-drawspace",
@@ -23,11 +24,14 @@ export class DrawspaceComponent implements OnInit, OnChanges {
     this.animation = anime.timeline({
       autoplay: false,
     })
+    const wrapper = document.querySelector('#drawspace-wrapper');
+    const w = wrapper.clientWidth;
+    const h = wrapper.clientHeight;
     this.rectangle = new fabric.Rect({
       width: 50,
       height: 50,
-      left: 130,
-      top: 130,
+      left: w/2,
+      top: h/2,
       fill: "teal",
       originX: 'center',
       originY: 'center',
@@ -35,22 +39,20 @@ export class DrawspaceComponent implements OnInit, OnChanges {
     });
     this.triangle = new fabric.Triangle({
       width: 100,
-      left: 30,
-      top: 20,
-      fill: "blue"
+      left: w/2,
+      top: h/2-30,
+      fill: "blue",
     });
     this.circle = new fabric.Circle({
       radius: 50,
-      left: 150,
-      top: 150,
+      left: w/2,
+      top: h/2,
       fill: "pink",
       opacity: 0,
     });
     this.canvas.add(this.rectangle);
     this.canvas.add(this.triangle);
     this.canvas.add(this.circle);
-
-    const wrapper = document.querySelector('#drawspace-wrapper');
 
     this.canvas.setWidth(wrapper.clientWidth);
     this.canvas.setHeight(wrapper.clientHeight);
@@ -68,7 +70,7 @@ export class DrawspaceComponent implements OnInit, OnChanges {
       }
     }).add({
       targets: this.triangle,
-      left: [this.canvas.width, 0],
+      left: [this.canvas.width, this.canvas.width/2-150],
       direction: 'alternate',
       loop: true,
       easing: "linear",
