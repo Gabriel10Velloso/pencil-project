@@ -1,16 +1,14 @@
-<div class="container">
-  <div class="card col border-light">
+<div class="container-fluid d-flex flex-col justify-content-center">
+  <div class="card border-light" id="main-card">
     <div class="card-header border-light">
       <h2>{{ title }}</h2>
     </div>
-    <div class=" card-body row ">
-      <div class="card col border-light" style="width: 50%;">
-        <h2></h2>
+    <div class="card-body flex-col">
+      <div class="card border-light" id="drawspace-wrapper">
         <app-drawspace [isPlaying]=isPlaying [isReset]=isReset></app-drawspace>
       </div>
-      <div class="card col border-light" style="width: 50%;">
-        <h2></h2>
-        <app-pause-play-button (play)=onPlay($event) (reset)=onReset($event)></app-pause-play-button>
+      <div class="card border-light" id="button-wrapper">
+        <app-control-buttons (play)=onPlay($event) (reset)=onReset($event)></app-control-buttons>
       </div>
     </div>
     <div class="card-footer text-muted">

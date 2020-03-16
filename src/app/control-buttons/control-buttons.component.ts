@@ -1,12 +1,12 @@
-import { Component, OnInit, Input, Output } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import {EventEmitter} from '@angular/core';
 
 @Component({
-  selector: 'app-pause-play-button',
-  templateUrl: './pause-play-button.component.html',
-  styleUrls: ['./pause-play-button.component.scss']
+  selector: 'app-control-buttons',
+  templateUrl: './control-buttons.component.html',
+  styleUrls: ['./control-buttons.component.scss']
 })
-export class PausePlayButtonComponent implements OnInit {
+export class ControlButtonsComponent implements OnInit {
   isPlay = true;
   isReset = true;
   @Output() play: EventEmitter<any> = new EventEmitter();

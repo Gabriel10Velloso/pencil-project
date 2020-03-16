@@ -12,21 +12,24 @@ Build a simple animations editor which can preview an animated ad creative:
 
 ## Steps
 1. git clone this repo
-2. go to folder
-3. ng serve and navigate to `http://localhost:4200/`
+2. go to folder on terminal
+3. `npm install`
+4. `npm start`
+5. navigate to `http://localhost:4200/`
 
 ## How it works
 - Press Play to start the animation (animation sequence: fade in, slide in, wiggle)
 - Press Pause to pause animation
-- Press Replay to restart the animation (it will automatically play on restart)
-
-## Error Handling
+- Press Restart to restart the animation (it will automatically play on restart)
 - Use Brave Browers/ Google Chrome or Safari (tested on these browsers)
 - Use it at full screen for best experience
 
+## Error Handling
+
 ## Potential Enhancements
 - Add functions to select custom objects or upload images
-- When task gets more complicated add test files back for testing purposes
+- e2e tests with Jasmine/Karma
+- Use Angular service or Observables via RxJS to handle data changes
 
 ## Frameworks used
 - Bootstrap 4

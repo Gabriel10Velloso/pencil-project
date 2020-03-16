@@ -3,13 +3,13 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { DrawspaceComponent } from './drawspace/drawspace.component';
-import { PausePlayButtonComponent } from './pause-play-button/pause-play-button.component';
+import { ControlButtonsComponent } from './control-buttons/control-buttons.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DrawspaceComponent,
-    PausePlayButtonComponent
+    ControlButtonsComponent
   ],
   imports: [
     BrowserModule

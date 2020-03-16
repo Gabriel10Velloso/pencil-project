@@ -50,8 +50,10 @@ export class DrawspaceComponent implements OnInit, OnChanges {
     this.canvas.add(this.triangle);
     this.canvas.add(this.circle);
 
-    this.canvas.setWidth(500);
-    this.canvas.setHeight(500);
+    const wrapper = document.querySelector('#drawspace-wrapper');
+
+    this.canvas.setWidth(wrapper.clientWidth);
+    this.canvas.setHeight(wrapper.clientHeight);
     
     this.animation
     .add({
