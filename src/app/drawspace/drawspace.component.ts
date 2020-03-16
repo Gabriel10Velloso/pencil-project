@@ -1,7 +1,6 @@
 import { Component, OnInit, OnChanges, Input, SimpleChanges } from "@angular/core";
 import {fabric} from 'fabric';
 import anime from 'animejs/lib/anime.es.js';
-import { wrap } from 'module';
 
 @Component({
   selector: "app-drawspace",
@@ -9,25 +8,21 @@ import { wrap } from 'module';
   styleUrls: ["./drawspace.component.scss"]
 })
 export class DrawspaceComponent implements OnInit, OnChanges {
-  test: boolean;
-  canvas: fabric;
-  rectangle: any;
-  triangle: any;
-  circle: any;
   animation: any;
   @Input() isPlaying: boolean;
   @Input() isReset: number;
+
   constructor() {}
 
   ngOnInit(): void {
-    this.canvas = new fabric.StaticCanvas("canvas");
+    const canvas = new fabric.StaticCanvas("canvas");
     this.animation = anime.timeline({
       autoplay: false,
     })
     const wrapper = document.querySelector('#drawspace-wrapper');
     const w = wrapper.clientWidth;
     const h = wrapper.clientHeight;
-    this.rectangle = new fabric.Rect({
+    const rectangle = new fabric.Rect({
       width: 50,
       height: 50,
       left: w/2,
@@ -37,48 +32,46 @@ export class DrawspaceComponent implements OnInit, OnChanges {
       originY: 'center',
       opacity: 0
     });
-    this.triangle = new fabric.Triangle({
+    const triangle = new fabric.Triangle({
       width: 100,
       left: w/2,
       top: h/2-30,
       fill: "blue",
     });
-    this.circle = new fabric.Circle({
+    const circle = new fabric.Circle({
       radius: 50,
       left: w/2,
       top: h/2,
       fill: "pink",
       opacity: 0,
     });
-    this.canvas.add(this.rectangle);
-    this.canvas.add(this.triangle);
-    this.canvas.add(this.circle);
+    canvas.add(rectangle);
+    canvas.add(triangle);
+    canvas.add(circle);
 
-    this.canvas.setWidth(wrapper.clientWidth);
-    this.canvas.setHeight(wrapper.clientHeight);
+    canvas.setWidth(w);
+    canvas.setHeight(h);
     
     this.animation
     .add({
-      targets: this.circle,
+      targets: circle,
       opacity: {
         value: 1,
         duration: 1300,
         easing: 'easeInSine',
       },
       update: () => {
-        this.canvas.renderAll();
+        canvas.renderAll();
       }
     }).add({
-      targets: this.triangle,
-      left: [this.canvas.width, this.canvas.width/2-150],
-      direction: 'alternate',
-      loop: true,
+      targets: triangle,
+      left: [w, w/2-150],
       easing: "linear",
       update: () => {
-        this.canvas.renderAll();
+        canvas.renderAll();
       }
     }).add({
-      targets: this.rectangle,
+      targets: rectangle,
       angle: [{
         value: 5,
         duration: 300,
@@ -96,7 +89,6 @@ export class DrawspaceComponent implements OnInit, OnChanges {
         duration: 300,
         easing: 'easeInOutSine'
       }],
-      loop: true,
       opacity: {
         value: 1,
         duration: 1200,
@@ -104,13 +96,13 @@ export class DrawspaceComponent implements OnInit, OnChanges {
       },
       duration: 3000,
       update: () => {
-        this.canvas.renderAll();
+        canvas.renderAll();
       }
     });
   }
   ngOnChanges(changes: SimpleChanges): void {
     if("isPlaying" in changes && !changes.isPlaying.isFirstChange()){
-      if (this.isPlaying === false) this.animation.play();
+      if (this.isPlaying === true) this.animation.play();
       else this.animation.pause();
     }
     if("isReset" in changes && !changes.isReset.isFirstChange()){

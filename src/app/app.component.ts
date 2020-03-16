@@ -6,13 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Interactive Ad Editor';  
-  isPlaying = null;
-  isReset = 0;
-  onPlay(evt){
+  title: String = 'Interactive Ad Editor';  
+  isPlaying: boolean = false;
+  isReset: number = 0;
+  onPlay(evt: boolean){
     this.isPlaying = evt;
   }
-  onReset(evt){
+  onReset(){
     this.isReset += 1;
   }
 }

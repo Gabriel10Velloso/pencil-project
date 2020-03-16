@@ -22,15 +22,14 @@ Build a simple animations editor which can preview an animated ad creative:
 - Press Pause to pause animation
 - Press Restart to restart the animation (it will automatically play on restart)
 - Use Brave Browers/ Google Chrome or Safari (tested on these browsers)
-- Use it at full screen for best experience
 
 ## Error Handling
-- After resizing screen, refresh to have best experience
 
 ## Potential Enhancements
 - Add functions to select custom objects or upload images
 - e2e tests with Jasmine/Karma
 - Use Angular service or Observables via RxJS to handle data changes
+- Add listener to resize canvas when resizing browser
 
 ## Frameworks used
 - Bootstrap 4

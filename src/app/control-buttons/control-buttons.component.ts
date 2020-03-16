@@ -7,8 +7,7 @@ import {EventEmitter} from '@angular/core';
   styleUrls: ['./control-buttons.component.scss']
 })
 export class ControlButtonsComponent implements OnInit {
-  isPlay = true;
-  isReset = true;
+  isPlay: boolean = false;
   @Output() play: EventEmitter<any> = new EventEmitter();
   @Output() reset: EventEmitter<any> = new EventEmitter();
 
